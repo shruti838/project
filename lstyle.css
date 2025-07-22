@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    /*background: seagreen;*/
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    backdrop-filter: blur(20px);
+}
+.logo {
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: auto;
+}
+nav a {
+    font-weight: 500;
+    margin-left: 40px;
+    color: #fff;
+    text-decoration: none;
+}
+.user-auth {
+    margin-left: 40px;
+}
+.login-btn-model {
+    color: #fff;
+}
+.user-auth .login-btn-model {
+    height: 40px;
+    padding: 0 35px;
+    background: transparent;
+    border: 2px solid #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .5s;
+}
+.user-auth .login-btn-model:hover {
+    background: #fff;
+    color: #222;
+}
+section {
+    min-height: 100vh;
+    background :url('background1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0px 100px;
+}
+section h1 {
+    position: absolute;
+    bottom: 40px;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 600;
+}
+.auth-model {
+    position: fixed;
+    width: 420px;
+    height: 440px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    color: #fff;
+    inset: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    transition: height 0.2s ease, transform 0.5s ease ;
+    overflow: hidden;
+    transform: scale(0);
+}
+.auth-model.show {
+    transform: scale(1);
+}
+.auth-model.slide {
+    height: 520px;
+}
+.auth-model .form-box {
+    width: 100%;
+    padding: 40px;
+}
+.auth-model .form-box.login, 
+.auth-model.slide .form-box.register {
+    transform: translateX(0);
+    transition: transform 0.18s ease;
+}
+.auth-model.slide .form-box.login {
+    position: absolute;
+    transform: translateX(400px);
+}
+.auth-model .form-box.register {
+    position: absolute;
+    transform: translateX(400px);
+}
+.form-box h2 {
+    font-size: 35px;
+    text-align: center;
+}
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+.input-box input::placeholder {
+    color: #fff;
+}
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border-radius: 40px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #222;
+    font-weight: 500;
+    cursor: pointer;
+}
+.form-box p {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.form-box p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.form-box p a :hover {
+    text-decoration: underline;
+}
+.auth-model .close-btn-model {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border: none;
+    border-bottom-left-radius: 20px;
+    font-size: 35px;
+    color: #222;
+    cursor: pointer;
+    z-index: 1;
+}
+.profile-box .avatar-circle {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 25px;
+    color: #222;
+    font-weight: 600;
+    cursor: pointer;
+}
+.profile-box .dropdown {
+    position: absolute;
+    top: 85px;
+    right: 100px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+}
+.profile-box.show .dropdown {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile-box .dropdown a {
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 2px 0;
+    transition: 0.2s;
+}
+.profile-box .dropdown a :hover {
+    background: #eee;
+}
+.alert-box {
+    position: fixed;
+    inset: 0;
+    top: 35px;
+    margin: 0 auto;
+    width: 350px;
+    height: 70px;
+    background: white;
+    border-radius: 6px;
+    padding: 0 15px;
+    z-index: 100;
+    overflow: hidden;
+    transform: translateY(calc(-100% - 35px));
+    transition: 0.5s ease;
+}
+.alert-box.show{
+    transform: translateY(0);
+}
+.alert {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background: white;
+    font-weight: 500;
+}
+.alert::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: progress 6s linear forwards;
+}
+.alert.error::after {
+    background: red;
+}
+@keyframes progress {
+    100% {
+        width: 0; 
+    }
+}
+.alert i {
+    font-size: 35px;
+    color: green;
+    margin-right: 8px;
+}
+.alert.error i {
+    color: red;
+}
